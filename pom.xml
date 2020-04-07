@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.netifi.quickstart</groupId>
+    <artifactId>netifi-quickstart</artifactId>
+    <version>1</version>
+    <packaging>pom</packaging>
+    <name>multi</name>
+
+    <modules>
+        <module>client</module>
+        <module>service</module>
+        <module>service-idl</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <log4j2.version>2.11.2</log4j2.version>
+        <netifi.bom.version>1.6.10</netifi.bom.version>
+        <protobuf.version>3.6.1</protobuf.version>
+        <rsocket.version>0.12.2-RC4</rsocket.version>
+        <rsocket.rpc.version>0.2.18</rsocket.rpc.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.netifi</groupId>
+                <artifactId>netifi-bom</artifactId>
+                <version>${netifi.bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-bom</artifactId>
+                <version>${log4j2.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rsocket</groupId>
+                <artifactId>rsocket-core</artifactId>
+                <version>${rsocket.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rsocket</groupId>
+                <artifactId>rsocket-transport-netty</artifactId>
+                <version>${rsocket.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rsocket.rpc</groupId>
+                <artifactId>rsocket-rpc-core</artifactId>
+                <version>${rsocket.rpc.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>bintray</id>
+            <url>http://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+</project>

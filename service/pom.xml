@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.netifi.quickstart</groupId>
+        <artifactId>netifi-quickstart</artifactId>
+        <version>1</version>
+    </parent>
+
+    <artifactId>service</artifactId>
+    <name>service</name>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.netifi.quickstart</groupId>
+            <artifactId>service-idl</artifactId>
+            <version>1.6.10</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.netifi</groupId>
+            <artifactId>netifi-broker-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j18-impl</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+       <plugins>
+           <plugin>
+               <groupId>org.codehaus.mojo</groupId>
+               <artifactId>exec-maven-plugin</artifactId>
+               <version>1.6.0</version>
+               <configuration>
+                   <mainClass>com.netifi.quickstart.service.Main</mainClass>
+               </configuration>
+           </plugin>
+       </plugins>
+    </build>
+</project>
